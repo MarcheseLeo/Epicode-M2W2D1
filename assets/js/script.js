@@ -247,7 +247,7 @@ function genderAssignment() {
     result.style.backgroundColor = '#647FBC'
   } else {
     resultRight(result, gender)
-    result.style.backgroundColor = '#F875AA'
+    result.style.backgroundColor = '#FDACAC'
   }
 
 }
@@ -279,7 +279,7 @@ function fizzBuzz() {
       let newResult = document.createElement('p')
       if (i % 3 === 0 && i % 5 === 0) {
         newResult.textContent = "FizzBuzz"
-        newResult.style.backgroundColor = "#AEDEFC"
+        newResult.style.backgroundColor = "#FACE68"
       } else if (i % 3 === 0) {
         newResult.textContent = "Fizz"
         newResult.style.backgroundColor = "#AEDEFC"
