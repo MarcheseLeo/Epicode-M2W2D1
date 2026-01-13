@@ -282,7 +282,7 @@ function fizzBuzz() {
         newResult.style.backgroundColor = "#AEDEFC"
       } else if (i % 3 === 0) {
         newResult.textContent = "Fizz"
-        newResult.style.backgroundColor = "#EDFFF0"
+        newResult.style.backgroundColor = "#AEDEFC"
       } else if (i % 5 === 0) {
         newResult.textContent = "Buzz"
          newResult.style.backgroundColor = "#F875AA"
