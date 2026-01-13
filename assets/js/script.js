@@ -2,9 +2,44 @@
 
 /* ESERCIZIO 1
  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
+
+
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function biggestNumber() {
+  let a = parseInt(document.getElementById("aUno").value)
+  let b = parseInt(document.getElementById("bUno").value)
+  let result = document.getElementById("result1")
+
+  if (!a || !b) {
+    resultError(result, "I numeri non possono essere vuoti")
+  }
+  else if (a == b) {
+    resultError(result, "I numeri sono uguali, inserisci due numeri differenti")
+  } else if (a > b) {
+    result.textContent = `Il numero più grande è: ${a}`
+    result.removeAttribute("class", "notDone")
+    result.setAttribute("class", "right")
+    let i = document.createElement("i")
+    i.classList.add("fa-solid")
+    i.classList.add("fa-circle-check")
+    i.style.marginLeft = "10px"
+    i.style.fontSize = "1.3em"
+    result.appendChild(i)
+  } else {
+    result.textContent = `Il numero più grande è: ${b}`
+    result.removeAttribute("class", "notDone")
+    result.setAttribute("class", "right")
+    let i = document.createElement("i")
+    i.classList.add("fa-solid")
+    i.classList.add("fa-circle-check")
+    i.style.marginLeft = "10px"
+    i.style.fontSize = "1.3em"
+    result.appendChild(i)
+  }
+
+}
 
 /*
 ESERCIZIO 2
@@ -18,6 +53,77 @@ ESERCIZIO 2
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function checkNumberSize() {
+  let num = parseInt(document.getElementById("aDue").value)
+  let result = document.getElementById("result2")
+
+  alert(num)
+
+  if (!num) {
+    result.textContent = "Il numero non possono essere vuoto"
+    result.removeAttribute("class", "notDone")
+    result.setAttribute("class", "error")
+    let i = document.createElement("i")
+    i.classList.add("fa-solid")
+    i.classList.add("fa-circle-exclamation")
+    i.style.marginLeft = "10px"
+    i.style.fontSize = "1.3em"
+    result.appendChild(i)
+  } else {
+    if (num < 5) {
+      result.textContent = `Tiny`
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+    } else if (num < 10) {
+      result.textContent = `Small`
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+    } else if (num < 15) {
+      result.textContent = `Medium`
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+    } else if (num < 20) {
+      result.textContent = `Large`
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+    } else {
+      result.textContent = `Huge`
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+    }
+  }
+}
+
 
 //ESERCIZI SUI CICLI: 
 
@@ -26,13 +132,67 @@ ESERCIZIO 2
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function printNumbers() {
 
+  let a = parseInt(document.getElementById("aTre").value)
+  let b = parseInt(document.getElementById("bTre").value)
+  let result = document.getElementById("result3")
+
+  if (!a || !b) {
+    resultError(result, "I numeri non possono essere vuowfdwefi")
+  } else if (a >= b) {
+    result.textContent = "Inzio deve essere minore di fine"
+    result.removeAttribute("class", "notDone")
+    result.setAttribute("class", "error")
+    let i = document.createElement("i")
+    i.classList.add("fa-solid")
+    i.classList.add("fa-circle-exclamation")
+    i.style.marginLeft = "10px"
+    i.style.fontSize = "1.3em"
+    result.appendChild(i)
+  } else if (a < 0 || b > 10) {
+    result.textContent = "Il range dei  numeri deve essere tra 0 e 10"
+    result.removeAttribute("class", "notDone")
+    result.setAttribute("class", "error")
+    let i = document.createElement("i")
+    i.classList.add("fa-solid")
+    i.classList.add("fa-circle-exclamation")
+    i.style.marginLeft = "10px"
+    i.style.fontSize = "1.3em"
+    result.appendChild(i)
+  } else {
+    let card = document.getElementById("card3")
+    while (a <= b) {
+      if (a === 3 || a === 8) {
+        a++
+        continue
+      }
+      result.textContent = a
+      result.removeAttribute("class", "notDone")
+      result.setAttribute("class", "right")
+      let i = document.createElement("i")
+      i.classList.add("fa-solid")
+      i.classList.add("fa-circle-check")
+      i.style.marginLeft = "10px"
+      i.style.fontSize = "1.3em"
+      result.appendChild(i)
+      console.log(a)
+      a++
+    }
+  }
+}
 /* ESERCIZIO 11
   Scrivi un ciclo in JavaScript per iterare da 0 a 15. Per ciascun elemento, il ciclo deve controllare the il valore corrente sia pari o dispari, e mostrare il risultato in console.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+for (let i = 0; i <= 15; i++) {
+  if (i % 2 === 0) {
+    console.log(`Il numero ${i} è pari`)
+  } else {
+    console.log(`Il numero ${i} è dispari`)
+  }
+}
 //ESERCIZI EXTRA NON OBBLIGATORI
 
 /* ESERCIZIO EXTRA 1
@@ -40,6 +200,23 @@ ESERCIZIO 2
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function checkEight() {
+  let a = parseInt(prompt("Inserisci il primo numero"))
+  let b = parseInt(prompt("Inserisci il secondo numero"))
+
+  if (Number.isNaN(a) || Number.isNaN(b)) {
+    alert("Inserisci un numero valido")
+  } else {
+    if (a === 8 || b === 8)
+      alert("Uno dei due numeri è uguale a 8")
+    else if ((a + b) === 8)
+      alert("La somma dei due numeri è uguale a 8")
+    else if ((a - b) === 8 || (b - a) === 8)
+      alert("La sottrazione tra i due numeri è uguale a 8")
+    else
+      alert("Nessuna condizione è soddisfatta")
+  }
+}
 
 /* ESERCIZIO EXTRA 2
 Stai lavorando su un sito di e-commerce. Stai salvando il saldo totale del carrello dell'utente in una variabile "totalShoppingCart".
@@ -48,6 +225,21 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function calculateTotal() {
+  let price = parseFloat(prompt("Inserisci il totale del carrello"))
+  const SHIPPINGCOST = 10
+
+  if (Number.isNaN(price) || price < 0) {
+    alert("Inserisci un valore valido")
+  } else {
+    if (price >= 50) {
+      alert(`Il totale del carrello è di: ${price}€. La spedizione e' sgratuita!`)
+    } else {
+      let total = price + SHIPPINGCOST
+      alert(`Il totale del carrello è di: ${total}€. (${price} + ${SHIPPINGCOST}€)`)
+    }
+  }
+}
 
 /* ESERCIZIO EXTRA 3
   Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
@@ -55,6 +247,23 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function calculateTotalBlackFriday() {
+  let price = parseFloat(prompt("Inserisci il totale del carrello"))
+  const SHIPPINGCOST = 10
+  const DISCOUNT = 0.20
+  let discountedPrice = price - (price * DISCOUNT)
+
+  if (Number.isNaN(price) || price < 0) {
+    alert("Inserisci un valore valido")
+  } else {
+    if (discountedPrice >= 50) {
+      alert(`Il totale del carrello è di: ${discountedPriceprice}€.(${price} - 20%) La spedizione e' sgratuita!`)
+    } else {
+      let total = discountedPrice + SHIPPINGCOST
+      alert(`Il totale del carrello è di: ${total}€. (${price} - 20% + ${SHIPPINGCOST}€)`)
+    }
+  }
+}
 
 /*  ESERCIZIO EXTRA 4
   Usa un operatore ternaio per assegnare ad una variabile chiamata "gender" i valori "male" o "female".
@@ -63,7 +272,41 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function genderAssignment() {
+  let isMale = confirm("Sei maschio? Premi OK per Sì, Annulla per No");
+  let gender = isMale ? "male" : "female"
+  console.log(`Il genere selezionato è: ${gender}`)
+}
+
 
 /* ESERCIZIO EXTRA 5
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. Se un valore tuttavia è multiplo di 3 (operatore modulo!), stampa al suo posto la parola "Fizz" e se il numero è multiplo di 5, stampa "Buzz". Se le condizioni si verificano entrambe, stampa "FizzBuzz".
-*/
+  */
+function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz")
+    } else if (i % 3 === 0) {
+      console.log("Fizz")
+    } else if (i % 5 === 0) {
+      console.log("Buzz")
+    } else {
+      console.log(i)
+    }
+  }
+}
+
+fizzBuzz()
+
+
+function resultError(result, messaggio) {
+  result.textContent = messaggio
+  result.removeAttribute("class", "notDone")
+  result.setAttribute("class", "error")
+  let i = document.createElement("i")
+  i.classList.add("fa-solid")
+  i.classList.add("fa-circle-exclamation")
+  i.style.marginLeft = "10px"
+  i.style.fontSize = "1.3em"
+  result.appendChild(i)
+}

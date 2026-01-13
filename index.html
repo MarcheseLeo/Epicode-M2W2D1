@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/49727d7509.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <main>
+        <div class="card">
+            <h2>Esercizio 1</h2>
+            <form action="">
+                <input type="number" placeholder="Inserisci numero" id="aUno">
+                <input type="number" placeholder="Inserisci numero" id="bUno">
+                <button type="button" onclick="biggestNumber()">Calcola</button>
+            </form>
+            <p id="result1" class="notDone result">Risultato</p>
+        </div>
+
+        <div class="card">
+            <h2>Esercizio 2</h2>
+            <form action="">
+                <input type="number" placeholder="Inserisci un numero" id="aDue">
+                <button type="button" onclick="checkNumberSize()">Calcola</button>
+            </form>
+            <p id="result2" class="notDone result">Risultato</p>
+        </div>
+
+        <div class="card" id="card3">
+            <h2>Esercizio 3</h2>
+            <form action="">
+                <input type="number" placeholder="Inserisci inizio" id="aTre">
+                <input type="number" placeholder="Inserisci fine" id="bTre">
+                <button type="button" onClick="printNumbers()">Stampa</button>
+            </form>
+            <p id="result3" class="notDone result">Risultato</p>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
