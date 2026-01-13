@@ -5,7 +5,7 @@
 
 body {
     font-family: 'MontSerrat', Arial, Helvetica, sans-serif;
-    background-color: rgb(232, 232, 232);
+    background-color: rgb(243, 245, 247)
 }
 
 
@@ -34,7 +34,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 12px;
     gap: 15px;
     padding: 10px;
 }
