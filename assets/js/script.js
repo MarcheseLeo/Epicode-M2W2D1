@@ -247,7 +247,7 @@ function genderAssignment() {
     result.style.backgroundColor = '#647FBC'
   } else {
     resultRight(result, gender)
-    result.style.backgroundColor = '#FFCDC9'
+    result.style.backgroundColor = '#F875AA'
   }
 
 }
