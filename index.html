@@ -40,6 +40,108 @@
             </form>
             <p id="result3" class="notDone result">Risultato</p>
         </div>
+
+        <div class="card" id="card4">
+            <h2>Esercizio 4</h2>
+            <form action="">
+                <input type="number" placeholder="Inserisci inizio" id="aQuattro">
+                <input type="number" placeholder="Inserisci fine" id="bQuattro">
+                <button type="button" onClick="printOddOrEven()">Stampa</button>
+            </form>
+            <p id="result4" class="notDone result">Risultato</p>
+        </div>
+        
+        <h3>Extra</h3>
+
+        <div class="card">
+            <h2>Esercizio extra 1</h2>
+            <form action="">
+                <input type="number" placeholder="Inserisci numero" id="aCinque">
+                <input type="number" placeholder="Inserisci numero" id="bCinque">
+                <button type="button" onClick="checkEight()">Calcola</button>
+            </form>
+            <p id="result5" class="notDone result">Risultato</p>
+        </div>
+
+        <div class="card">
+            <h2>Esercizio extra 2</h2>
+            <div class="imgRow">
+                <div class="imgContainer">
+                    <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price1">35</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price1">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price2">22.5</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price2">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=705&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price3">16</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price3">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price4">13.25</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price4">Add</button>
+                </div>
+            </div>
+
+            <div class="imgRow">
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1531730857698-ae61fc8a9826?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price5">3</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price5">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1587411768913-623b76d243c7?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price6">9</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price6">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1613223968777-9a59c6f8c4de?q=80&w=734&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price" id="price7">1.5</p>
+                    </div>
+                    <button onclick="calculateTotal(value)" value="price7">Add</button>
+                </div>
+
+                <div class="imgContainer">
+                    <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Immagine">
+                    <div class="priceContainer">
+                        <p>$</p>
+                        <p class="price">18</p>
+                    </div>
+                    <button onclick="calculateTotal()">Add</button>
+                </div>
+            </div>
+             <p id="result6" class="notDone result">Risultato</p>
+        </div>
     </main>
 
     <script src="assets/js/script.js"></script>

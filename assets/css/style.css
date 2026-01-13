@@ -13,7 +13,11 @@ h2 {
     font-size: 2rem;
     font-weight: 500;
 }
-
+h3 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 20px 0;
+}
 main {
     width: 1000px;
     margin: 0 auto;
@@ -114,3 +118,23 @@ form{
     font-size: 14px;
 }
 
+.imgContainer > img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.imgContainer  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+.priceContainer > p {
+    display: inline-block;
+}
+
+.imgRow {
+    display: flex;
+    gap: 30px;
+}

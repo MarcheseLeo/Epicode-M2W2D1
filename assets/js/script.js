@@ -18,25 +18,9 @@ function biggestNumber() {
   else if (a == b) {
     resultError(result, "I numeri sono uguali, inserisci due numeri differenti")
   } else if (a > b) {
-    result.textContent = `Il numero più grande è: ${a}`
-    result.removeAttribute("class", "notDone")
-    result.setAttribute("class", "right")
-    let i = document.createElement("i")
-    i.classList.add("fa-solid")
-    i.classList.add("fa-circle-check")
-    i.style.marginLeft = "10px"
-    i.style.fontSize = "1.3em"
-    result.appendChild(i)
+    resultRight(result, `Il numero più grande è: ${a}`)
   } else {
-    result.textContent = `Il numero più grande è: ${b}`
-    result.removeAttribute("class", "notDone")
-    result.setAttribute("class", "right")
-    let i = document.createElement("i")
-    i.classList.add("fa-solid")
-    i.classList.add("fa-circle-check")
-    i.style.marginLeft = "10px"
-    i.style.fontSize = "1.3em"
-    result.appendChild(i)
+    resultRight(result, `Il numero più grande è: ${b}`)
   }
 
 }
@@ -57,69 +41,19 @@ function checkNumberSize() {
   let num = parseInt(document.getElementById("aDue").value)
   let result = document.getElementById("result2")
 
-  alert(num)
-
   if (!num) {
-    result.textContent = "Il numero non possono essere vuoto"
-    result.removeAttribute("class", "notDone")
-    result.setAttribute("class", "error")
-    let i = document.createElement("i")
-    i.classList.add("fa-solid")
-    i.classList.add("fa-circle-exclamation")
-    i.style.marginLeft = "10px"
-    i.style.fontSize = "1.3em"
-    result.appendChild(i)
+    resultError(result, "Il numero non possono essere vuoto")
   } else {
     if (num < 5) {
-      result.textContent = `Tiny`
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
-      let i = document.createElement("i")
-      i.classList.add("fa-solid")
-      i.classList.add("fa-circle-check")
-      i.style.marginLeft = "10px"
-      i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      resultRight(result, `Tiny`)
     } else if (num < 10) {
-      result.textContent = `Small`
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
-      let i = document.createElement("i")
-      i.classList.add("fa-solid")
-      i.classList.add("fa-circle-check")
-      i.style.marginLeft = "10px"
-      i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      resultRight(result, 'Small')
     } else if (num < 15) {
-      result.textContent = `Medium`
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
-      let i = document.createElement("i")
-      i.classList.add("fa-solid")
-      i.classList.add("fa-circle-check")
-      i.style.marginLeft = "10px"
-      i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      resultRight(result, 'Medium')
     } else if (num < 20) {
-      result.textContent = `Large`
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
-      let i = document.createElement("i")
-      i.classList.add("fa-solid")
-      i.classList.add("fa-circle-check")
-      i.style.marginLeft = "10px"
-      i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      resultRight(result, 'Large')
     } else {
-      result.textContent = `Huge`
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
-      let i = document.createElement("i")
-      i.classList.add("fa-solid")
-      i.classList.add("fa-circle-check")
-      i.style.marginLeft = "10px"
-      i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      resultRight(result, 'Huge')
     }
   }
 }
@@ -138,44 +72,37 @@ function printNumbers() {
   let b = parseInt(document.getElementById("bTre").value)
   let result = document.getElementById("result3")
 
-  if (!a || !b) {
-    resultError(result, "I numeri non possono essere vuowfdwefi")
+  if (!a && a != 0 || !b && b != 0) {
+    resultError(result, "I numeri non possono essere vuoti")
   } else if (a >= b) {
-    result.textContent = "Inzio deve essere minore di fine"
-    result.removeAttribute("class", "notDone")
-    result.setAttribute("class", "error")
-    let i = document.createElement("i")
-    i.classList.add("fa-solid")
-    i.classList.add("fa-circle-exclamation")
-    i.style.marginLeft = "10px"
-    i.style.fontSize = "1.3em"
-    result.appendChild(i)
+    resultError(result, "Inzio deve essere minore di fine")
   } else if (a < 0 || b > 10) {
-    result.textContent = "Il range dei  numeri deve essere tra 0 e 10"
-    result.removeAttribute("class", "notDone")
-    result.setAttribute("class", "error")
-    let i = document.createElement("i")
-    i.classList.add("fa-solid")
-    i.classList.add("fa-circle-exclamation")
-    i.style.marginLeft = "10px"
-    i.style.fontSize = "1.3em"
-    result.appendChild(i)
+    resultError(result, "Il range dei  numeri deve essere tra 0 e 10")
   } else {
     let card = document.getElementById("card3")
+    result.style.display = 'none'
+    const figliDaEliminare = card.querySelectorAll('.right');
+
+    figliDaEliminare.forEach(figlio => {
+      figlio.remove();
+    }); 1
+
     while (a <= b) {
       if (a === 3 || a === 8) {
         a++
         continue
       }
-      result.textContent = a
-      result.removeAttribute("class", "notDone")
-      result.setAttribute("class", "right")
+      let newResult = document.createElement('p')
+      newResult.textContent = a
+      newResult.removeAttribute("class", "notDone")
+      newResult.setAttribute("class", "right")
       let i = document.createElement("i")
       i.classList.add("fa-solid")
       i.classList.add("fa-circle-check")
       i.style.marginLeft = "10px"
       i.style.fontSize = "1.3em"
-      result.appendChild(i)
+      newResult.appendChild(i)
+      card.appendChild(newResult)
       console.log(a)
       a++
     }
@@ -186,13 +113,50 @@ function printNumbers() {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-for (let i = 0; i <= 15; i++) {
-  if (i % 2 === 0) {
-    console.log(`Il numero ${i} è pari`)
+function printOddOrEven() {
+  let a = parseInt(document.getElementById("aQuattro").value)
+  let b = parseInt(document.getElementById("bQuattro").value)
+  let card = document.getElementById('card4')
+  let result = document.getElementById('result4')
+
+  if (!a && a != 0 || !b && b != 0) {
+    resultError(result, "I numeri non possono essere vuoti")
+  } else if (a >= b) {
+    resultError(result, "Inzio deve essere minore di fine")
+  } else if (a < 0 || b > 15) {
+    resultError(result, "Il range dei  numeri deve essere tra 0 e 15")
   } else {
-    console.log(`Il numero ${i} è dispari`)
+    result.style.display = 'none'
+    const figliDaEliminare = card.querySelectorAll('.right');
+
+    figliDaEliminare.forEach(figlio => {
+      figlio.remove();
+    });
+
+
+    for (let i = a; i <= b; i++) {
+      let newResult = document.createElement('p')
+      if (i % 2 === 0) {
+        newResult.textContent = `Il numero ${i} è pari`
+        newResult.style.backgroundColor = " #BADFDB"
+      } else {
+        newResult.textContent = `Il numero ${i} è dispari`
+        newResult.style.backgroundColor = " #FFA4A4 "
+      }
+      newResult.removeAttribute("class", "notDone")
+      newResult.setAttribute("class", "right")
+      let icona = document.createElement('i')
+      icona.classList.add("fa-solid")
+      icona.classList.add("fa-circle-check")
+      icona.style.marginLeft = "10px"
+      icona.style.fontSize = "1.3em"
+      newResult.appendChild(icona)
+      card.appendChild(newResult)
+    }
   }
+
 }
+
 //ESERCIZI EXTRA NON OBBLIGATORI
 
 /* ESERCIZIO EXTRA 1
@@ -201,20 +165,21 @@ for (let i = 0; i <= 15; i++) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function checkEight() {
-  let a = parseInt(prompt("Inserisci il primo numero"))
-  let b = parseInt(prompt("Inserisci il secondo numero"))
+  let a = parseInt(document.getElementById('aCinque').value)
+  let b = parseInt(document.getElementById('bCinque').value)
+  let result = document.getElementById('result5')
 
-  if (Number.isNaN(a) || Number.isNaN(b)) {
-    alert("Inserisci un numero valido")
+  if (!a && a != 0 || !b && b != 0) {
+    resultError(result, "Inserisci un numero valido")
   } else {
     if (a === 8 || b === 8)
-      alert("Uno dei due numeri è uguale a 8")
+      resultRight(result, "Uno dei due numeri è uguale a 8")
     else if ((a + b) === 8)
-      alert("La somma dei due numeri è uguale a 8")
+      resultRight(result, "La somma dei due numeri è uguale a 8")
     else if ((a - b) === 8 || (b - a) === 8)
-      alert("La sottrazione tra i due numeri è uguale a 8")
+      resultRight(result, "La sottrazione tra i due numeri è uguale a 8")
     else
-      alert("Nessuna condizione è soddisfatta")
+      resultRight(result, "Nessuna condizione è soddisfatta")
   }
 }
 
@@ -306,6 +271,18 @@ function resultError(result, messaggio) {
   let i = document.createElement("i")
   i.classList.add("fa-solid")
   i.classList.add("fa-circle-exclamation")
+  i.style.marginLeft = "10px"
+  i.style.fontSize = "1.3em"
+  result.appendChild(i)
+}
+
+function resultRight(result, messaggio) {
+  result.textContent = messaggio
+  result.removeAttribute("class", "notDone")
+  result.setAttribute("class", "right")
+  let i = document.createElement("i")
+  i.classList.add("fa-solid")
+  i.classList.add("fa-circle-check")
   i.style.marginLeft = "10px"
   i.style.fontSize = "1.3em"
   result.appendChild(i)
