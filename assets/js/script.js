@@ -190,19 +190,18 @@ Crea un algoritmo che determini l'ammontare totale che deve essere addebitato al
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function calculateTotal() {
-  let price = parseFloat(prompt("Inserisci il totale del carrello"))
+let totalPrice = 0;
+function calculateTotal(priceContainer) {
+  let result = document.getElementById('result6')
+  let price = parseFloat(document.getElementById(priceContainer).textContent)
   const SHIPPINGCOST = 10
-
-  if (Number.isNaN(price) || price < 0) {
-    alert("Inserisci un valore valido")
+  totalPrice += price
+  if (totalPrice >= 50) {
+    resultRight(result, `Il totale del carrello è di: ${totalPrice}€. La spedizione e' sgratuita!`)
   } else {
-    if (price >= 50) {
-      alert(`Il totale del carrello è di: ${price}€. La spedizione e' sgratuita!`)
-    } else {
-      let total = price + SHIPPINGCOST
-      alert(`Il totale del carrello è di: ${total}€. (${price} + ${SHIPPINGCOST}€)`)
-    }
+    let total = totalPrice + SHIPPINGCOST
+    resultError(result, `Il totale del carrello è di: ${total}€. (${totalPrice} + ${SHIPPINGCOST}€)`)
+
   }
 }
 
@@ -212,22 +211,23 @@ function calculateTotal() {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function calculateTotalBlackFriday() {
-  let price = parseFloat(prompt("Inserisci il totale del carrello"))
+let totalPriceBlackFriday = 0
+function calculateTotalBlackFriday(priceContainer) {
+  let result = document.getElementById('result7')
+  let price = parseFloat(document.getElementById(priceContainer).textContent)
+  totalPriceBlackFriday += price
   const SHIPPINGCOST = 10
   const DISCOUNT = 0.20
-  let discountedPrice = price - (price * DISCOUNT)
+  let discountedPrice = totalPriceBlackFriday - (totalPriceBlackFriday * DISCOUNT)
 
-  if (Number.isNaN(price) || price < 0) {
-    alert("Inserisci un valore valido")
+
+  if (discountedPrice >= 50) {
+    resultRight(result, `Il totale del carrello è di: ${discountedPrice}€.(${totalPriceBlackFriday} - 20%) La spedizione e' sgratuita!`)
   } else {
-    if (discountedPrice >= 50) {
-      alert(`Il totale del carrello è di: ${discountedPriceprice}€.(${price} - 20%) La spedizione e' sgratuita!`)
-    } else {
-      let total = discountedPrice + SHIPPINGCOST
-      alert(`Il totale del carrello è di: ${total}€. (${price} - 20% + ${SHIPPINGCOST}€)`)
-    }
+    let total = discountedPrice + SHIPPINGCOST
+    resultError(result, `Il totale del carrello è di: ${total}€. (${totalPriceBlackFriday} - 20% + ${SHIPPINGCOST}€)`)
   }
+
 }
 
 /*  ESERCIZIO EXTRA 4
@@ -238,30 +238,72 @@ function calculateTotalBlackFriday() {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 function genderAssignment() {
-  let isMale = confirm("Sei maschio? Premi OK per Sì, Annulla per No");
-  let gender = isMale ? "male" : "female"
-  console.log(`Il genere selezionato è: ${gender}`)
-}
+  let isMale = document.querySelector('input[name="genere"]:checked').value;
+  let result = document.getElementById('result8')
+  let gender = (isMale === 'M') ? 'Sei Uomo' : 'Sei Donna';
 
+  if (isMale === 'M') {
+    resultRight(result, gender)
+    result.style.backgroundColor = '#647FBC'
+  } else {
+    resultRight(result, gender)
+    result.style.backgroundColor = '#FFCDC9'
+  }
+
+}
 
 /* ESERCIZIO EXTRA 5
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. Se un valore tuttavia è multiplo di 3 (operatore modulo!), stampa al suo posto la parola "Fizz" e se il numero è multiplo di 5, stampa "Buzz". Se le condizioni si verificano entrambe, stampa "FizzBuzz".
   */
 function fizzBuzz() {
-  for (let i = 1; i <= 100; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      console.log("FizzBuzz")
-    } else if (i % 3 === 0) {
-      console.log("Fizz")
-    } else if (i % 5 === 0) {
-      console.log("Buzz")
-    } else {
-      console.log(i)
+  let a = parseInt(document.getElementById("aNove").value)
+  let b = parseInt(document.getElementById("bNove").value)
+  let card = document.getElementById('card9')
+  let result = document.getElementById('result9')
+
+  if (!a && a != 0 || !b && b != 0) {
+    resultError(result, "I numeri non possono essere vuoti")
+  } else if (a >= b) {
+    resultError(result, "Inzio deve essere minore di fine")
+  } else if (a < 1 || b > 100) {
+    resultError(result, "Il range dei  numeri deve essere tra 1 e 100")
+  } else {
+    result.style.display = 'none'
+    const figliDaEliminare = card.querySelectorAll('.right');
+
+    figliDaEliminare.forEach(figlio => {
+      figlio.remove();
+    });
+
+    for (let i = a; i <= b; i++) {
+      let newResult = document.createElement('p')
+      if (i % 3 === 0 && i % 5 === 0) {
+        newResult.textContent = "FizzBuzz"
+        newResult.style.backgroundColor = "#AEDEFC"
+      } else if (i % 3 === 0) {
+        newResult.textContent = "Fizz"
+        newResult.style.backgroundColor = "#EDFFF0"
+      } else if (i % 5 === 0) {
+        newResult.textContent = "Buzz"
+         newResult.style.backgroundColor = "#F875AA"
+      } else {
+        newResult.textContent = i
+      }
+
+      newResult.removeAttribute("class", "notDone")
+      newResult.setAttribute("class", "right")
+      let icona = document.createElement('i')
+      icona.classList.add("fa-solid")
+      icona.classList.add("fa-circle-check")
+      icona.style.marginLeft = "10px"
+      icona.style.fontSize = "1.3em"
+      newResult.appendChild(icona)
+      card.appendChild(newResult)
     }
   }
+
 }
 
-fizzBuzz()
 
 
 function resultError(result, messaggio) {
