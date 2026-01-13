@@ -43,14 +43,14 @@ input[type="number"] {
     padding: 10px;
     margin: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     width: 130px;
 }
 
 button {
-    border-radius: 10px;
+    border-radius: 30px;
     border: 0px;
-    background-color: rgb(59, 130, 246);
+    background-color: rgb(79, 68, 226);
     color: white;
     font-weight: 500;
     font-size: 1.05em;
